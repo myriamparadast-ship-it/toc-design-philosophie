@@ -21,6 +21,18 @@
   .sub{margin-top:20px;font-size:18px;color:var(--muted);max-width:560px;margin-left:auto;margin-right:auto}
   h2{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.15em;color:var(--teal);margin:64px 0 8px}
   h3{font-size:26px;font-weight:400;margin-bottom:16px}
+  h3.dd{margin-top:72px;padding-top:40px;border-top:1px solid var(--border)}
+  html{scroll-behavior:smooth}
+  .toc-nav{display:flex;gap:8px;justify-content:center;margin:28px auto 0;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+  .toc-nav a{text-decoration:none;color:var(--ink);font-size:13px;padding:8px 18px;border:1px solid var(--border);border-radius:99px;background:var(--card)}
+  .toc-nav a:hover{border-color:var(--yellow);background:var(--teal-light)}
+  .badge{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--teal-light);color:var(--teal);border-radius:99px;padding:3px 12px;margin-left:10px;vertical-align:middle}
+  section-anchor{display:block}
+  .prins{margin:24px 0}
+  .prin{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px 20px;margin-bottom:10px;font-family:'Helvetica Neue',Arial,sans-serif}
+  .pnum{flex:none;width:30px;height:30px;border-radius:50%;background:var(--yellow);color:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .prin strong{font-weight:500;font-size:15px}
+  .prin p{margin:2px 0 0;font-size:14px;color:var(--muted)}
   p{margin-bottom:16px;font-size:17px}
   .lead{font-size:20px}
   .hmw{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--teal);padding:32px;margin:32px 0;font-size:22px;font-style:italic;line-height:1.5}
@@ -88,6 +100,12 @@
     <span class="lang-de">Warum es The Offline Club gibt — hergeleitet aus Research, Community-Feedback und einem Double-Diamond-Prozess.</span>
     <span class="lang-en">Why The Offline Club exists — derived from research, community feedback, and a Double Diamond process.</span>
   </p>
+  <nav class="toc-nav">
+    <a href="#discover">Discover</a>
+    <a href="#define">Define</a>
+    <a href="#develop">Develop &#10227;</a>
+    <a href="#deliver">Deliver &#9675;</a>
+  </nav>
 </header>
 
 <div class="wrap">
@@ -128,11 +146,11 @@
   <div class="grid ddmap">
     <div class="card" style="padding:16px">
       <h4>Discover &#10003;</h4>
-      <p><span class="lang-de">19 Themen: 14 Secondary + 5 Primary Research, Convenience-Paradox, Werte-Weltvergleich</span><span class="lang-en">19 themes: 14 secondary + 5 primary research, convenience paradox, global values comparison</span></p>
+      <p><span class="lang-de">20 Themen: 15 Secondary + 5 Primary Research, Convenience-Paradox, Werte-Weltvergleich, Scham vs. Spiel</span><span class="lang-en">20 themes: 15 secondary + 5 primary research, convenience paradox, global values comparison, shame vs. play</span></p>
     </div>
     <div class="card" style="padding:16px">
       <h4>Define &#10003;</h4>
-      <p><span class="lang-de">Ebenen-Matrix, 3 Insights, HMW-Frage</span><span class="lang-en">Levels matrix, 3 insights, HMW question</span></p>
+      <p><span class="lang-de">Ebenen-Matrix, 3 Insights, HMW-Frage, 5 Design-Prinzipien</span><span class="lang-en">Levels matrix, 3 insights, HMW question, 5 design principles</span></p>
     </div>
     <div class="card" style="padding:16px">
       <h4>Develop &#10227;</h4>
@@ -148,11 +166,11 @@
     @media(max-width:640px){.ddmap{grid-template-columns:1fr 1fr}}
   </style>
 
-  <h2>Discover</h2>
-  <h3><span class="lang-de">19 Themen, zwei Quellen</span><span class="lang-en">19 themes, two sources</span></h3>
+  <h2 id="discover">Discover</h2>
+  <h3><span class="lang-de">20 Themen, zwei Quellen</span><span class="lang-en">20 themes, two sources</span></h3>
   <p>
-    <span class="lang-de">Vierzehn Themen aus Secondary Research (Studien, gesellschaftliche Trends) — fünf aus Primary Research: den echten Stimmen unserer Event-Gäste.</span>
-    <span class="lang-en">Fourteen themes from secondary research (studies, societal trends) — five from primary research: the real voices of our event guests.</span>
+    <span class="lang-de">Fünfzehn Themen aus Secondary Research (Studien, gesellschaftliche Trends) — fünf aus Primary Research: den echten Stimmen unserer Event-Gäste.</span>
+    <span class="lang-en">Fifteen themes from secondary research (studies, societal trends) — five from primary research: the real voices of our event guests.</span>
   </p>
 
   <div class="themes">
@@ -170,6 +188,7 @@
     <div class="theme">Boredom &amp; Deep Work Erosion<small><span class="lang-de">Langeweile aushalten — verlernt</span><span class="lang-en">Tolerating boredom — unlearned</span></small></div>
     <div class="theme"><span class="lang-de">Das Convenience-Paradox</span><span class="lang-en">The convenience paradox</span><small><span class="lang-de">Convenience frisst die Bedingungen der Selbstverwirklichung</span><span class="lang-en">Convenience consumes the conditions of self-actualization</span></small></div>
     <div class="theme"><span class="lang-de">Werte-Kollision West/Ost</span><span class="lang-en">Value collision West/East</span><small><span class="lang-de">Self-Expression-Nomads treffen auf gelebte Community-Werte (Bali)</span><span class="lang-en">Self-expression nomads meet lived community values (Bali)</span></small></div>
+    <div class="theme"><span class="lang-de">Scham vs. Spiel</span><span class="lang-en">Shame vs. play</span><small><span class="lang-de">Scham blockiert Verhaltensänderung — Autonomie, Play und Selbstironie wirken</span><span class="lang-en">Shame blocks behaviour change — autonomy, play and self-irony work</span></small></div>
     <div class="theme"><span class="tag primary">Primary</span><br><span class="lang-de">Connection über Detox</span><span class="lang-en">Connection over detox</span><small><span class="lang-de">Niemand kommt wegen des Phones. Alle kommen wegen Menschen.</span><span class="lang-en">Nobody comes because of the phone. Everybody comes for people.</span></small></div>
     <div class="theme"><span class="tag primary">Primary</span><br><span class="lang-de">Silence als Erlebnis</span><span class="lang-en">Silence as an experience</span><small><span class="lang-de">Gemeinsame Stille — das Feature, das digital nicht existiert</span><span class="lang-en">Shared silence — the feature that doesn't exist digitally</span></small></div>
     <div class="theme"><span class="tag primary">Primary</span><br>"Am I alone in this?"<small><span class="lang-de">Menschen suchen Bestätigung, dass ihr Unbehagen normal ist</span><span class="lang-en">People seek confirmation that their unease is normal</span></small></div>
@@ -177,7 +196,7 @@
     <div class="theme"><span class="tag primary">Primary</span><br>Accidental Discovery<small><span class="lang-de">Der Ort selbst rekrutiert — stärker als jede Anzeige</span><span class="lang-en">The place itself recruits — stronger than any ad</span></small></div>
   </div>
 
-  <h3><span class="lang-de">Das Convenience-Paradox</span><span class="lang-en">The convenience paradox</span></h3>
+  <h3 class="dd"><span class="lang-de">Deep Dive 1: Das Convenience-Paradox</span><span class="lang-en">Deep dive 1: The convenience paradox</span></h3>
   <p>
     <span class="lang-de">Technologie liefert Geschwindigkeit. Geschwindigkeit wird zur Erwartung. Die gewonnene Zeit soll in Selbstverwirklichung fließen — tut sie aber nicht. Denn Selbstverwirklichung braucht genau das, was Convenience entfernt.</span>
     <span class="lang-en">Technology delivers speed. Speed becomes the expectation. The time saved is supposed to flow into self-actualization — but it doesn't. Because self-actualization needs exactly what convenience removes.</span>
@@ -209,11 +228,37 @@
     .panswer{margin-top:12px;background:var(--yellow);border-radius:8px;padding:16px;text-align:center;font-size:15px;color:#1a1a1a}
   </style>
 
-  <h3><span class="lang-de">Werte im Weltvergleich</span><span class="lang-en">Values across the world</span></h3>
-  <p>
-    <span class="lang-de">Reiner Research-Stand, noch kein Lösungsraum. Grundlage: World Values Survey / Inglehart-Welzel-Karte (90+ Länder). Zwei Achsen erklären 70–75% der weltweiten Wertevarianz: <strong>traditionell ↔ säkular-rational</strong> und <strong>Survival ↔ Self-Expression</strong>. Die Farbe zeigt die zweite Achse; darunter stehen die typischen Top-Werte je Kulturraum.</span>
-    <span class="lang-en">Pure research — no solution space yet. Basis: World Values Survey / Inglehart-Welzel map (90+ countries). Two axes explain 70–75% of global value variance: <strong>traditional ↔ secular-rational</strong> and <strong>survival ↔ self-expression</strong>. Colour shows the second axis; below are the typical top values per cultural region.</span>
+  <h3 class="dd"><span class="lang-de">Deep Dive 2: Werte im Weltvergleich</span><span class="lang-en">Deep dive 2: Values across the world</span></h3>
+  <p class="lead">
+    <span class="lang-de">Zwei Fragen erklären fast alles: Wie sehr bestimmt Tradition dein Leben? Und wofür nutzt du deine Freiheit — Sicherheit oder Selbstentfaltung? Der World Values Survey stellt sie seit über 40 Jahren in 90+ Ländern. Das Ergebnis: Familie und Gesundheit verbinden die ganze Welt. Was uns unterscheidet, ist der Weg dahinter.</span>
+    <span class="lang-en">Two questions explain almost everything: how much does tradition shape your life? And what do you use your freedom for — security or self-development? The World Values Survey has asked them for over 40 years across 90+ countries. The result: family and health connect the whole world. What sets us apart is the path behind them.</span>
   </p>
+  <svg width="100%" viewBox="0 0 680 330" role="img" style="margin:8px 0 16px;display:block">
+    <title>Weltkarte der Werte</title>
+    <desc>Stilisierte Weltkarte: Regionen eingefärbt nach Survival- vs. Self-Expression-Werten laut World Values Survey.</desc>
+    <path d="M60,110 Q55,60 110,50 Q180,35 205,70 Q215,95 185,105 Q160,110 150,135 Q130,160 110,140 Q75,135 60,110 Z" fill="#F0C420" opacity="0.85"/>
+    <path d="M165,170 Q195,155 215,175 Q230,205 215,245 Q205,290 185,295 Q165,290 165,250 Q155,205 165,170 Z" fill="#F7DE7A"/>
+    <path d="M300,95 Q295,60 330,52 Q365,45 375,65 Q380,85 355,92 Q330,90 322,105 Q305,108 300,95 Z" fill="#F0C420" opacity="0.85"/>
+    <path d="M385,60 Q420,35 500,38 Q590,40 620,65 Q625,85 585,90 Q520,95 460,90 Q410,92 390,80 Q380,70 385,60 Z" fill="#E8926B"/>
+    <path d="M300,120 Q330,105 370,118 Q395,130 380,170 Q370,215 345,250 Q325,265 315,235 Q295,190 295,150 Q295,130 300,120 Z" fill="#D85A30" opacity="0.9"/>
+    <path d="M430,115 Q470,105 510,120 Q535,135 520,160 Q500,185 470,180 Q440,175 430,150 Q425,130 430,115 Z" fill="#D85A30" opacity="0.75"/>
+    <path d="M545,100 Q590,95 615,115 Q625,140 600,150 Q570,155 550,140 Q535,120 545,100 Z" fill="#D85A30" opacity="0.85"/>
+    <ellipse cx="505" cy="205" rx="12" ry="5" fill="#D85A30" opacity="0.75"/>
+    <ellipse cx="533" cy="211" rx="10" ry="5" fill="#D85A30" opacity="0.75"/>
+    <ellipse cx="558" cy="216" rx="9" ry="4" fill="#D85A30" opacity="0.75"/>
+    <path d="M575,250 Q605,240 632,255 Q645,272 626,288 Q596,298 578,285 Q563,266 575,250 Z" fill="#F0C420" opacity="0.85"/>
+    <circle cx="536" cy="211" r="4" fill="#1a1a1a"/>
+    <text x="536" y="238" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" font-weight="500" fill="#1a1a1a">Bali</text>
+    <text x="132" y="92" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#1a1a1a"><tspan class="lang-de">Nordamerika</tspan><tspan class="lang-en">North America</tspan></text>
+    <text x="192" y="232" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#6b6b6b"><tspan class="lang-de">Südamerika</tspan><tspan class="lang-en">South America</tspan></text>
+    <text x="338" y="76" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#1a1a1a"><tspan class="lang-de">Europa</tspan><tspan class="lang-en">Europe</tspan></text>
+    <text x="502" y="68" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#1a1a1a"><tspan class="lang-de">Osteuropa &amp; Russland</tspan><tspan class="lang-en">Eastern Europe &amp; Russia</tspan></text>
+    <text x="340" y="185" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#fff"><tspan class="lang-de">Afrika &amp; Naher Osten</tspan><tspan class="lang-en">Africa &amp; Middle East</tspan></text>
+    <text x="472" y="150" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#fff"><tspan class="lang-de">Südasien</tspan><tspan class="lang-en">South Asia</tspan></text>
+    <text x="582" y="128" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#fff"><tspan class="lang-de">Ostasien</tspan><tspan class="lang-en">East Asia</tspan></text>
+    <text x="602" y="272" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#1a1a1a"><tspan class="lang-de">Australien</tspan><tspan class="lang-en">Australia</tspan></text>
+    <text x="40" y="318" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#6b6b6b"><tspan class="lang-de">Stilisierte Darstellung nach World Values Survey / Inglehart-Welzel</tspan><tspan class="lang-en">Stylised view based on World Values Survey / Inglehart-Welzel</tspan></text>
+  </svg>
   <div class="wlegend sans">
     <span><span class="dot" style="background:var(--yellow)"></span><span class="lang-de">Self-Expression-Pol</span><span class="lang-en">Self-expression pole</span></span>
     <span><span class="dot" style="background:#D85A30"></span><span class="lang-de">Survival-Pol</span><span class="lang-en">Survival pole</span></span>
@@ -247,18 +292,28 @@
     .wtile.wm{background:var(--card)}
   </style>
 
-  <h2>Define</h2>
+  <h3 class="dd"><span class="lang-de">Deep Dive 3: Scham vs. Spiel</span><span class="lang-en">Deep dive 3: Shame vs. play</span></h3>
+  <p>
+    <span class="lang-de">Digitale Abhängigkeit ist schambesetzt — dabei ist sie designtes Verhalten, keine Charakterschwäche. Der Kern-Befund der Kommunikationsforschung: Scham erzeugt Vermeidung statt Veränderung. Kontrollierende Botschaften lösen Reactance aus — Menschen verteidigen ihre Freiheit sogar gegen die eigenen Interessen. Nachhaltig wirken Autonomie, erlebte Kompetenz und Verbundenheit (Self-Determination Theory) — und alles wird leichter, wenn es gemeinsam passiert.</span>
+    <span class="lang-en">Digital dependency carries shame — yet it's designed behaviour, not a character flaw. The core finding of communication research: shame produces avoidance, not change. Controlling messages trigger reactance — people defend their freedom even against their own interests. What works lastingly: autonomy, experienced competence and relatedness (self-determination theory) — and everything gets easier when it happens together.</span>
+  </p>
+  <p style="font-size:14px;color:var(--muted)">
+    <span class="lang-de">Wie wir das in Gestaltung übersetzen → siehe Design-Prinzipien in der Define-Phase.</span>
+    <span class="lang-en">How we translate this into design → see the design principles in the Define phase.</span>
+  </p>
+
+  <h2 id="define">Define</h2>
   <h3><span class="lang-de">Drei Ebenen, ein Bruch</span><span class="lang-en">Three levels, one fracture</span></h3>
   <p>
-    <span class="lang-de">Sortiert man alle 19 Themen nach Ebene (Individuum, Community, System) und nach der Frage, ob sie den <strong>Wunsch</strong> nach Offline-Zeit beschreiben oder die <strong>Barriere</strong> dagegen, zeigt sich ein klares Bild:</span>
-    <span class="lang-en">Sorting all 19 themes by level (individual, community, system) and by whether they describe the <strong>desire</strong> for offline time or the <strong>barrier</strong> against it reveals a clear pattern:</span>
+    <span class="lang-de">Sortiert man alle 20 Themen nach Ebene (Individuum, Community, System) und nach der Frage, ob sie den <strong>Wunsch</strong> nach Offline-Zeit beschreiben oder die <strong>Barriere</strong> dagegen, zeigt sich ein klares Bild:</span>
+    <span class="lang-en">Sorting all 20 themes by level (individual, community, system) and by whether they describe the <strong>desire</strong> for offline time or the <strong>barrier</strong> against it reveals a clear pattern:</span>
   </p>
 
   <div class="matrix sans">
     <div class="row">
-      <div class="lvl"><span class="lang-de">Individuum</span><span class="lang-en">Individual</span><br><small style="color:var(--muted)"><span class="lang-de">5 Themen</span><span class="lang-en">5 themes</span></small></div>
-      <div class="bar"><div class="b-teal" style="width:60%"></div><div class="b-teal-l" style="width:40%"></div></div>
-      <div class="note"><span class="lang-de">5/5 wollen<br>2 davon primary</span><span class="lang-en">5/5 desire<br>2 of them primary</span></div>
+      <div class="lvl"><span class="lang-de">Individuum</span><span class="lang-en">Individual</span><br><small style="color:var(--muted)"><span class="lang-de">6 Themen</span><span class="lang-en">6 themes</span></small></div>
+      <div class="bar"><div class="b-teal" style="width:45%"></div><div class="b-teal-l" style="width:38%"></div><div class="b-coral" style="width:17%"></div></div>
+      <div class="note"><span class="lang-de">5/6 wollen<br>2 davon primary</span><span class="lang-en">5/6 desire<br>2 of them primary</span></div>
     </div>
     <div class="row">
       <div class="lvl">Community<br><small style="color:var(--muted)"><span class="lang-de">8 Themen</span><span class="lang-en">8 themes</span></small></div>
@@ -288,6 +343,24 @@
     <div class="insight hero">
       <p><strong><span class="lang-de">Die Infrastruktur, die Offline-Zeit früher automatisch lieferte — Cafés, Vereine, Nachbarschaft — ist weggebrochen. Es gibt keinen Standardweg mehr dorthin. Genau diese Lücke besetzt The Offline Club.</span><span class="lang-en">The infrastructure that once delivered offline time automatically — cafés, clubs, neighbourhoods — has broken away. There is no default path anymore. This is exactly the gap The Offline Club fills.</span></strong></p>
     </div>
+  </div>
+
+  <h3 class="dd"><span class="lang-de">Design-Prinzipien: Scham in Spiel übersetzen</span><span class="lang-en">Design principles: translating shame into play</span></h3>
+  <p>
+    <span class="lang-de">Aus dem Research (Deep Dive 3) destilliert — fünf Interaktions-Prinzipien für alles, was wir gestalten:</span>
+    <span class="lang-en">Distilled from the research (deep dive 3) — five interaction principles for everything we design:</span>
+  </p>
+  <div class="prins">
+    <div class="prin"><span class="pnum">1</span><div><strong><span class="lang-de">Normalisieren</span><span class="lang-en">Normalise</span></strong><p><span class="lang-de">Scham stirbt, wenn es alle betrifft. Der Host geht vor: erst die eigene Screentime zeigen, dann fragen.</span><span class="lang-en">Shame dies when it applies to everyone. The host goes first: show your own screen time, then ask.</span></p></div></div>
+    <div class="prin"><span class="pnum">2</span><div><strong><span class="lang-de">Einladen, nie anweisen</span><span class="lang-en">Invite, never instruct</span></strong><p><span class="lang-de">Jede Aktion ist ein Opt-in. Die Phone-Box ist ein Angebot — keine Eingangskontrolle.</span><span class="lang-en">Every action is an opt-in. The phone box is an offer — not a checkpoint.</span></p></div></div>
+    <div class="prin"><span class="pnum">3</span><div><strong><span class="lang-de">Ritual statt Regel</span><span class="lang-en">Ritual over rule</span></strong><p><span class="lang-de">Aus Verzicht wird Zeremonie: "Wir legen unsere Handys schlafen" — ein gemeinsamer Moment, kein Verbot.</span><span class="lang-en">Renunciation becomes ceremony: "We put our phones to sleep" — a shared moment, not a ban.</span></p></div></div>
+    <div class="prin"><span class="pnum">4</span><div><strong><span class="lang-de">Spiel als Übersetzer</span><span class="lang-en">Play as translator</span></strong><p><span class="lang-de">Neugier ersetzt Druck: Selftest, Jenga, Uncertainty. Der erwünschte Weg ist der, der Spaß macht.</span><span class="lang-en">Curiosity replaces pressure: self-test, Jenga, uncertainty. The desired path is the fun one.</span></p></div></div>
+    <div class="prin"><span class="pnum">5</span><div><strong><span class="lang-de">Gemeinsam schlägt allein</span><span class="lang-en">Together beats alone</span></strong><p><span class="lang-de">Was die Gruppe tut, ist keine Überwindung mehr — es ist Zugehörigkeit. Alle Handys in einer Box: geteilter Mut.</span><span class="lang-en">What the group does is no longer an effort — it's belonging. All phones in one box: shared courage.</span></p></div></div>
+  </div>
+  <div class="panswer" style="text-align:left;padding:24px 28px">
+    <strong style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.12em;display:block;margin-bottom:8px"><span class="lang-de">Learning für Events</span><span class="lang-en">Learning for events</span></strong>
+    <span class="lang-de">Eingeladen schlägt erzogen. Gemeinsam schlägt allein. Spiel schlägt Zeigefinger. Aus "Du solltest weniger am Handy sein" wird: <em>"Komm, wir legen unsere Handys schlafen."</em></span>
+    <span class="lang-en">Invited beats lectured. Together beats alone. Play beats finger-wagging. "You should use your phone less" becomes: <em>"Come on, let's put our phones to sleep."</em></span>
   </div>
 
   <h2><span class="lang-de">Die Stimmen dahinter</span><span class="lang-en">The voices behind it</span></h2>
@@ -333,6 +406,20 @@
       <p><span class="lang-de">Die einzige echte Angst vorm Phone-Abgeben ist der Notfall. Also designen wir sie weg — z.B. mit der Host-Notfallnummer.</span><span class="lang-en">The only real fear of handing over the phone is the emergency. So we design it away — e.g. with the host's emergency number.</span></p>
     </div>
   </div>
+
+  <h2 id="develop">Develop<span class="badge"><span class="lang-de">Ongoing Process</span><span class="lang-en">Ongoing process</span></span></h2>
+  <h3><span class="lang-de">Die Ideen entstehen gerade</span><span class="lang-en">The ideas are taking shape</span></h3>
+  <p>
+    <span class="lang-de">Hier läuft aktuell die divergente Ideation: 13 Format- und Produkt-Ideen liegen auf dem Tisch — von Café-Zonen über Silence-first-Dramaturgie bis zur Emergency-Line. Sie werden gerade gegen das Community-Feedback geprüft und konvergiert. Die stärksten 2–3 landen hier.</span>
+    <span class="lang-en">Divergent ideation is happening right now: 13 format and product ideas are on the table — from café zones to silence-first dramaturgy to the emergency line. They are being tested against community feedback and converged. The strongest 2–3 will land here.</span>
+  </p>
+
+  <h2 id="deliver">Deliver<span class="badge"><span class="lang-de">Ongoing Process</span><span class="lang-en">Ongoing process</span></span></h2>
+  <h3><span class="lang-de">Bauen, testen, iterieren</span><span class="lang-en">Build, test, iterate</span></h3>
+  <p>
+    <span class="lang-de">Folgt, sobald Develop konvergiert ist: Die ausgewählten Formate werden bei echten Events getestet, mit Feedback iteriert — und dann hier dokumentiert.</span>
+    <span class="lang-en">Coming once Develop has converged: the selected formats will be tested at real events, iterated with feedback — and then documented here.</span>
+  </p>
 
   <div class="footer">
     <span class="lang-de">The Offline Club Bali · Design-Philosophie v1 · erarbeitet im Double-Diamond-Prozess · August 2026<br>Quellen: Secondary Research (u.a. WHO, RCT-Metaanalysen zu Screen Time), Primary Research (Event Feedback Responses, Community Gatherings #1–3)</span>
