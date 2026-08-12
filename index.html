@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Offline Club — Design-Philosophie</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6b6b6b; --paper:#faf7f2; --card:#ffffff;
+    --teal:#8a6a00; --teal-light:#FBF3D0; --yellow:#F0C420; --yellow-soft:#F7DE7A; --coral:#993d1f; --coral-light:#FAECE7;
+    --purple:#3C3489; --purple-light:#EEEDFE; --border:#e8e2d8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7}
+  .sans{font-family:'Helvetica Neue',Arial,sans-serif}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px}
+  header{padding:72px 24px 48px;text-align:center;border-bottom:1px solid var(--border);position:relative}
+  header .kicker{font-family:'Helvetica Neue',Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:var(--muted);margin-bottom:16px}
+  h1{font-size:42px;font-weight:400;line-height:1.2;max-width:700px;margin:0 auto}
+  h1 em{font-style:italic;color:var(--teal)}
+  .sub{margin-top:20px;font-size:18px;color:var(--muted);max-width:560px;margin-left:auto;margin-right:auto}
+  h2{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.15em;color:var(--teal);margin:64px 0 8px}
+  h3{font-size:26px;font-weight:400;margin-bottom:16px}
+  p{margin-bottom:16px;font-size:17px}
+  .lead{font-size:20px}
+  .hmw{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--teal);padding:32px;margin:32px 0;font-size:22px;font-style:italic;line-height:1.5}
+  .hmw .label{font-family:'Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);display:block;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:24px}
+  .card h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;margin-bottom:8px}
+  .card p{font-size:15px;color:var(--muted);margin-bottom:0}
+  .tag{font-family:'Helvetica Neue',Arial,sans-serif;display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+  .tag.wollen{background:var(--teal-light);color:var(--teal)}
+  .tag.primary{background:var(--purple-light);color:var(--purple)}
+  .matrix{margin:32px 0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:32px}
+  .row{display:grid;grid-template-columns:120px 1fr 130px;align-items:center;gap:16px;margin-bottom:20px}
+  .row:last-child{margin-bottom:0}
+  .row .lvl{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px}
+  .bar{display:flex;height:30px;border-radius:5px;overflow:hidden}
+  .bar div{height:100%}
+  .b-teal{background:var(--yellow)}
+  .b-teal-l{background:var(--yellow-soft)}
+  .b-coral{background:#D85A30}
+  .row .note{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--muted);text-align:right}
+  .legend{display:flex;gap:20px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--muted);flex-wrap:wrap}
+  .legend span{display:flex;align-items:center;gap:6px}
+  .dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .insight{counter-increment:ins;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px 28px 28px 72px;margin-bottom:16px;position:relative}
+  .insight::before{content:counter(ins);position:absolute;left:24px;top:24px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:20px;width:32px;height:32px;border-radius:50%;background:var(--yellow);color:#1a1a1a;display:flex;align-items:center;justify-content:center}
+  .insight.hero{border-left:4px solid var(--teal);background:var(--teal-light)}
+  .insight p{margin:0;font-size:17px}
+  .quote{font-style:italic;font-size:19px;padding:20px 28px;border-left:3px solid var(--border);margin:24px 0;color:#444}
+  .quote .who{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:12px;color:var(--muted);margin-top:8px}
+  .themes{columns:2;column-gap:16px;margin:24px 0}
+  @media(max-width:640px){.themes{columns:1}}
+  .theme{break-inside:avoid;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:12px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px}
+  .theme small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+  .footer{margin-top:80px;padding:40px 24px;border-top:1px solid var(--border);text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--muted)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;text-align:center}
+  @media(max-width:640px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px 16px}
+  .stat .big{font-family:'Helvetica Neue',Arial,sans-serif;font-size:40px;color:var(--teal)}
+  .stat .lbl{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--muted);margin-top:6px}
+  .lang-switch{position:fixed;top:16px;right:16px;z-index:10;display:flex;background:var(--card);border:1px solid var(--border);border-radius:99px;overflow:hidden;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .lang-switch button{border:none;background:transparent;padding:8px 18px;cursor:pointer;font-size:13px;color:var(--muted);font-family:inherit}
+  .lang-switch button.active{background:var(--yellow);color:#1a1a1a}
+  .lang-en{display:none}
+  body.en .lang-de{display:none}
+  body.en .lang-en{display:revert}
+  body.en span.lang-en, body.en em.lang-en, body.en strong.lang-en{display:inline}
+</style>
+</head>
+<body>
+
+<div class="lang-switch" role="group" aria-label="Language">
+  <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+  <button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<header>
+  <div class="kicker"><span class="lang-de">The Offline Club · Design-Philosophie · Double Diamond</span><span class="lang-en">The Offline Club · Design philosophy · Double Diamond</span></div>
+  <h1>
+    <span class="lang-de">Der Wunsch ist längst da.<br><em>Was fehlt, ist der Ort.</em></span>
+    <span class="lang-en">The desire is already there.<br><em>What's missing is the place.</em></span>
+  </h1>
+  <p class="sub">
+    <span class="lang-de">Warum es The Offline Club gibt — hergeleitet aus Research, Community-Feedback und einem Double-Diamond-Prozess.</span>
+    <span class="lang-en">Why The Offline Club exists — derived from research, community feedback, and a Double Diamond process.</span>
+  </p>
+</header>
+
+<div class="wrap">
+
+  <h2><span class="lang-de">Das große Bild</span><span class="lang-en">The big picture</span></h2>
+  <h3><span class="lang-de">Kein Motivationsproblem. Ein Strukturproblem.</span><span class="lang-en">Not a motivation problem. A structural problem.</span></h3>
+  <p class="lead">
+    <span class="lang-de">Menschen wollen offline sein. Das belegen Studien — und jede einzelne Antwort in unseren Feedback-Bögen. Was verschwunden ist, sind die Orte und Rituale, die Offline-Zeit früher automatisch geliefert haben: das Café ohne Laptops, der Verein, die Nachbarschaft. The Offline Club ersetzt nicht das Digitale. Er ersetzt die verlorene Infrastruktur des Analogen.</span>
+    <span class="lang-en">People want to be offline. Studies prove it — and so does every single answer in our feedback forms. What has disappeared are the places and rituals that once delivered offline time automatically: the café without laptops, the club, the neighbourhood. The Offline Club doesn't replace the digital. It replaces the lost infrastructure of the analogue.</span>
+  </p>
+
+  <div class="hmw">
+    <span class="label">How might we</span>
+    <span class="lang-de">Wie schaffen wir wiederkehrende Räume und Wissen, die es Menschen leicht machen, das zu leben, was sie ohnehin wollen — trotz eines Systems, das dagegen gebaut ist?</span>
+    <span class="lang-en">How might we create recurring spaces and knowledge that make it easy for people to live what they already want — despite a system built against it?</span>
+  </div>
+
+  <h2>Discover</h2>
+  <h3><span class="lang-de">17 Themen, zwei Quellen</span><span class="lang-en">17 themes, two sources</span></h3>
+  <p>
+    <span class="lang-de">Zwölf Themen aus Secondary Research (Studien, gesellschaftliche Trends) — fünf aus Primary Research: den echten Stimmen unserer Event-Gäste.</span>
+    <span class="lang-en">Twelve themes from secondary research (studies, societal trends) — five from primary research: the real voices of our event guests.</span>
+  </p>
+
+  <div class="themes">
+    <div class="theme">Loneliness Epidemic<small><span class="lang-de">Einsamkeit als Gesundheitsrisiko (WHO)</span><span class="lang-en">Loneliness as a health risk (WHO)</span></small></div>
+    <div class="theme">Attention Economy &amp; Digital Fatigue<small><span class="lang-de">Plattformen kämpfen um Aufmerksamkeit</span><span class="lang-en">Platforms compete for attention</span></small></div>
+    <div class="theme"><span class="lang-de">Third Places im Sterben</span><span class="lang-en">The death of third places</span><small><span class="lang-de">Dritte Orte verschwinden strukturell</span><span class="lang-en">Third places are structurally disappearing</span></small></div>
+    <div class="theme">Dopamine Loops &amp; Habit Design<small><span class="lang-de">Tech formt Verhalten — bewusst</span><span class="lang-en">Tech shapes behaviour — by design</span></small></div>
+    <div class="theme">Post-Pandemic Social Atrophy<small><span class="lang-de">Verlernter spontaner Kontakt</span><span class="lang-en">The unlearned art of spontaneous contact</span></small></div>
+    <div class="theme">Total Digital Dependency<small><span class="lang-de">Für alles gibt es ein digitales Produkt</span><span class="lang-en">There's a digital product for everything</span></small></div>
+    <div class="theme">Always-On Digital Economy<small><span class="lang-de">Der Job selbst ist der erste Digital-Zwang</span><span class="lang-en">The job itself is the first digital constraint</span></small></div>
+    <div class="theme">AI Acceleration<small><span class="lang-de">Höheres Tempo, neue Abhängigkeit</span><span class="lang-en">Higher pace, new dependency</span></small></div>
+    <div class="theme">Bowling Alone<small><span class="lang-de">Vereine &amp; Institutionen erodieren</span><span class="lang-en">Clubs &amp; institutions are eroding</span></small></div>
+    <div class="theme">Digital Nomad Hustle Culture<small><span class="lang-de">Maximale Freiheit, maximale Bindung</span><span class="lang-en">Maximum freedom, maximum attachment</span></small></div>
+    <div class="theme"><span class="lang-de">Digital Detox als Markt</span><span class="lang-en">Digital detox as a market</span><small><span class="lang-de">Die Nachfrage ist längst da</span><span class="lang-en">The demand already exists</span></small></div>
+    <div class="theme">Boredom &amp; Deep Work Erosion<small><span class="lang-de">Langeweile aushalten — verlernt</span><span class="lang-en">Tolerating boredom — unlearned</span></small></div>
+    <div class="theme"><span class="tag primary">Primary</span><br><span class="lang-de">Connection über Detox</span><span class="lang-en">Connection over detox</span><small><span class="lang-de">Niemand kommt wegen des Phones. Alle kommen wegen Menschen.</span><span class="lang-en">Nobody comes because of the phone. Everybody comes for people.</span></small></div>
+    <div class="theme"><span class="tag primary">Primary</span><br><span class="lang-de">Silence als Erlebnis</span><span class="lang-en">Silence as an experience</span><small><span class="lang-de">Gemeinsame Stille — das Feature, das digital nicht existiert</span><span class="lang-en">Shared silence — the feature that doesn't exist digitally</span></small></div>
+    <div class="theme"><span class="tag primary">Primary</span><br>"Am I alone in this?"<small><span class="lang-de">Menschen suchen Bestätigung, dass ihr Unbehagen normal ist</span><span class="lang-en">People seek confirmation that their unease is normal</span></small></div>
+    <div class="theme"><span class="tag primary">Primary</span><br><span class="lang-de">Der echte FOMO-Kern</span><span class="lang-en">The real core of FOMO</span><small><span class="lang-de">Die Angst ist der Familien-Notfall — nicht die Langeweile</span><span class="lang-en">The fear is a family emergency — not boredom</span></small></div>
+    <div class="theme"><span class="tag primary">Primary</span><br>Accidental Discovery<small><span class="lang-de">Der Ort selbst rekrutiert — stärker als jede Anzeige</span><span class="lang-en">The place itself recruits — stronger than any ad</span></small></div>
+  </div>
+
+  <h2>Define</h2>
+  <h3><span class="lang-de">Drei Ebenen, ein Bruch</span><span class="lang-en">Three levels, one fracture</span></h3>
+  <p>
+    <span class="lang-de">Sortiert man alle 17 Themen nach Ebene (Individuum, Community, System) und nach der Frage, ob sie den <strong>Wunsch</strong> nach Offline-Zeit beschreiben oder die <strong>Barriere</strong> dagegen, zeigt sich ein klares Bild:</span>
+    <span class="lang-en">Sorting all 17 themes by level (individual, community, system) and by whether they describe the <strong>desire</strong> for offline time or the <strong>barrier</strong> against it reveals a clear pattern:</span>
+  </p>
+
+  <div class="matrix sans">
+    <div class="row">
+      <div class="lvl"><span class="lang-de">Individuum</span><span class="lang-en">Individual</span><br><small style="color:var(--muted)"><span class="lang-de">5 Themen</span><span class="lang-en">5 themes</span></small></div>
+      <div class="bar"><div class="b-teal" style="width:60%"></div><div class="b-teal-l" style="width:40%"></div></div>
+      <div class="note"><span class="lang-de">5/5 wollen<br>2 davon primary</span><span class="lang-en">5/5 desire<br>2 of them primary</span></div>
+    </div>
+    <div class="row">
+      <div class="lvl">Community<br><small style="color:var(--muted)"><span class="lang-de">7 Themen</span><span class="lang-en">7 themes</span></small></div>
+      <div class="bar"><div class="b-teal" style="width:57%"></div><div class="b-teal-l" style="width:43%"></div></div>
+      <div class="note"><span class="lang-de">7/7 wollen<br>3 davon primary</span><span class="lang-en">7/7 desire<br>3 of them primary</span></div>
+    </div>
+    <div class="row">
+      <div class="lvl">System<br><small style="color:var(--muted)"><span class="lang-de">5 Themen</span><span class="lang-en">5 themes</span></small></div>
+      <div class="bar"><div class="b-teal" style="width:20%"></div><div class="b-coral" style="width:80%"></div></div>
+      <div class="note"><span class="lang-de">4/5 können<br>0 primary</span><span class="lang-en">4/5 barrier<br>0 primary</span></div>
+    </div>
+    <div class="legend">
+      <span><span class="dot b-teal"></span><span class="lang-de">wollen — der Wunsch ist da</span><span class="lang-en">desire — the wish is there</span></span>
+      <span><span class="dot b-teal-l"></span><span class="lang-de">davon aus eigenem Event-Feedback</span><span class="lang-en">of which from our own event feedback</span></span>
+      <span><span class="dot b-coral"></span><span class="lang-de">können — die Struktur blockiert</span><span class="lang-en">barrier — the structure blocks it</span></span>
+    </div>
+  </div>
+
+  <h3>Insights</h3>
+  <div style="counter-reset:ins">
+    <div class="insight">
+      <p><span class="lang-de">Der Wunsch nach Offline-Zeit ist kein Motivationsproblem. Er ist bereits da — individuell und kollektiv. Das Hindernis ist strukturell, nicht charakterlich.</span><span class="lang-en">The desire for offline time is not a motivation problem. It is already there — individually and collectively. The obstacle is structural, not a character flaw.</span></p>
+    </div>
+    <div class="insight">
+      <p><span class="lang-de">Digitale Überlastung verschärft nachweislich Angst-, Depressions- und Aufmerksamkeitssymptome — unabhängig vom Willen der Person. Reduktion wirkt messbar.</span><span class="lang-en">Digital overload demonstrably worsens anxiety, depression, and attention symptoms — regardless of a person's willpower. Reduction has measurable effects.</span></p>
+    </div>
+    <div class="insight hero">
+      <p><strong><span class="lang-de">Die Infrastruktur, die Offline-Zeit früher automatisch lieferte — Cafés, Vereine, Nachbarschaft — ist weggebrochen. Es gibt keinen Standardweg mehr dorthin. Genau diese Lücke besetzt The Offline Club.</span><span class="lang-en">The infrastructure that once delivered offline time automatically — cafés, clubs, neighbourhoods — has broken away. There is no default path anymore. This is exactly the gap The Offline Club fills.</span></strong></p>
+    </div>
+  </div>
+
+  <h2><span class="lang-de">Die Stimmen dahinter</span><span class="lang-en">The voices behind it</span></h2>
+  <h3><span class="lang-de">Was Gäste wirklich sagen</span><span class="lang-en">What guests actually say</span></h3>
+
+  <div class="quote">"To see if I am not alone."<span class="who"><span class="lang-de">— Chris, auf die Frage, warum er gekommen ist</span><span class="lang-en">— Chris, asked why he came</span></span></div>
+  <div class="quote">"Staying silent with others felt natural."<span class="who">— Chris, Panorama Point</span></div>
+  <div class="quote">"Please continue and do more of this — we humans need it!"<span class="who">— Catia, Panorama Point</span></div>
+  <div class="quote">"I really hope this project spreads and reaches more people because I think many people need a space like this."<span class="who"><span class="lang-de">— Gast, Panorama Point</span><span class="lang-en">— Guest, Panorama Point</span></span></div>
+
+  <div class="stats sans">
+    <div class="stat"><div class="big">~9.8</div><div class="lbl"><span class="lang-de">NPS-Schnitt über alle Events</span><span class="lang-en">Average NPS across all events</span></div></div>
+    <div class="stat"><div class="big">8/8</div><div class="lbl"><span class="lang-de">wählten volle Präsenz statt Dokumentation</span><span class="lang-en">chose full presence over documentation</span></div></div>
+    <div class="stat"><div class="big">1</div><div class="lbl"><span class="lang-de">echte Angst: der Familien-Notfall — designbar</span><span class="lang-en">real fear: the family emergency — designable</span></div></div>
+  </div>
+
+  <h2><span class="lang-de">Unsere Haltung</span><span class="lang-en">Our stance</span></h2>
+  <h3><span class="lang-de">Role Model, nicht Teacher</span><span class="lang-en">Role model, not teacher</span></h3>
+  <p>
+    <span class="lang-de">Wir spielen nicht den Lehrer. Wir bieten Raum und Wissen — aber vorleben muss es jeder selbst. Das Produkt ist das Event, die Community und das Wissens-Nugget darin. Offline ist dabei nie das Ziel, sondern der Mechanismus. Das Ziel ist Verbindung: mit anderen, und mit sich selbst.</span>
+    <span class="lang-en">We don't play the teacher. We offer space and knowledge — but everyone has to live it themselves. The product is the event, the community, and the knowledge nugget inside it. Offline is never the goal — it's the mechanism. The goal is connection: with others, and with yourself.</span>
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <span class="tag wollen"><span class="lang-de">Raum</span><span class="lang-en">Space</span></span>
+      <h4><span class="lang-de">Wiederkehrende dritte Orte</span><span class="lang-en">Recurring third places</span></h4>
+      <p><span class="lang-de">Wir ersetzen die verlorene Infrastruktur: feste Formate, vertraute Gesichter, Orte ohne Bildschirm-Erwartung.</span><span class="lang-en">We replace the lost infrastructure: recurring formats, familiar faces, places without screen expectations.</span></p>
+    </div>
+    <div class="card">
+      <span class="tag wollen">Ritual</span>
+      <h4><span class="lang-de">Struktur im Rahmen, Uncertainty im Inhalt</span><span class="lang-en">Structure in the frame, uncertainty in the content</span></h4>
+      <p><span class="lang-de">Erst Stille, dann Verbindung. Du weißt nie genau, was passiert — das Gegenteil vom planbaren Feed.</span><span class="lang-en">Silence first, then connection. You never know exactly what will happen — the opposite of the predictable feed.</span></p>
+    </div>
+    <div class="card">
+      <span class="tag wollen"><span class="lang-de">Wissen</span><span class="lang-en">Knowledge</span></span>
+      <h4><span class="lang-de">Ein Nugget pro Event</span><span class="lang-en">One nugget per event</span></h4>
+      <p><span class="lang-de">Kein Vortrag. Jedes Event trägt genau ein Stück Wissen, verpackt in Erfahrung — vom Selftest bis "scroll smarter".</span><span class="lang-en">No lectures. Every event carries exactly one piece of knowledge, wrapped in experience — from the self-test to "scroll smarter".</span></p>
+    </div>
+    <div class="card">
+      <span class="tag wollen">Enabling</span>
+      <h4><span class="lang-de">Barrieren wegdesignen</span><span class="lang-en">Design the barriers away</span></h4>
+      <p><span class="lang-de">Die einzige echte Angst vorm Phone-Abgeben ist der Notfall. Also designen wir sie weg — z.B. mit der Host-Notfallnummer.</span><span class="lang-en">The only real fear of handing over the phone is the emergency. So we design it away — e.g. with the host's emergency number.</span></p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="lang-de">The Offline Club Bali · Design-Philosophie v1 · erarbeitet im Double-Diamond-Prozess · August 2026<br>Quellen: Secondary Research (u.a. WHO, RCT-Metaanalysen zu Screen Time), Primary Research (Event Feedback Responses, Community Gatherings #1–3)</span>
+    <span class="lang-en">The Offline Club Bali · Design philosophy v1 · developed through a Double Diamond process · August 2026<br>Sources: secondary research (incl. WHO, RCT meta-analyses on screen time), primary research (event feedback responses, community gatherings #1–3)</span>
+  </div>
+
+</div>
+
+<script>
+function setLang(l){
+  document.body.classList.toggle('en', l==='en');
+  document.documentElement.lang = l;
+  document.getElementById('btn-de').classList.toggle('active', l==='de');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  try{localStorage.setItem('toc-lang', l);}catch(e){}
+}
+try{
+  var saved = localStorage.getItem('toc-lang');
+  if(saved==='en') setLang('en');
+}catch(e){}
+</script>
+</body>
+</html>
