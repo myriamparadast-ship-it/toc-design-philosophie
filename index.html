@@ -105,6 +105,49 @@
     <span class="lang-en">How might we create recurring spaces and knowledge that make it easy for people to live what they already want — despite a system built against it?</span>
   </div>
 
+  <h2><span class="lang-de">Der Prozess</span><span class="lang-en">The process</span></h2>
+  <h3>Double Diamond</h3>
+  <p>
+    <span class="lang-de">Diese Seite folgt dem Double-Diamond-Prozess: erst divergent öffnen, dann konvergent schärfen — zweimal. Die Zuordnung zeigt, welcher Inhalt zu welcher Phase gehört.</span>
+    <span class="lang-en">This page follows the Double Diamond process: diverge first, then converge — twice. The mapping shows which content belongs to which phase.</span>
+  </p>
+  <svg width="100%" viewBox="0 0 680 190" role="img" style="margin:16px 0;display:block">
+    <title>Double Diamond</title>
+    <desc>Zwei Rauten: Discover und Define im ersten Diamanten, Develop und Deliver im zweiten.</desc>
+    <polygon points="40,95 190,25 190,165" fill="#F0C420" opacity="0.9"/>
+    <polygon points="190,25 340,95 190,165" fill="#F0C420" opacity="0.55"/>
+    <polygon points="340,95 490,25 490,165" fill="#F7DE7A" opacity="0.55"/>
+    <polygon points="490,25 640,95 490,165" fill="#e8e2d8"/>
+    <text x="150" y="99" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="14" font-weight="500" fill="#1a1a1a">Discover</text>
+    <text x="238" y="99" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="14" font-weight="500" fill="#1a1a1a">Define</text>
+    <text x="442" y="99" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="14" font-weight="500" fill="#1a1a1a">Develop</text>
+    <text x="532" y="99" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="14" font-weight="500" fill="#6b6b6b">Deliver</text>
+    <text x="190" y="16" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#6b6b6b">divergent &#8594; konvergent</text>
+    <text x="490" y="16" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#6b6b6b">divergent &#8594; konvergent</text>
+  </svg>
+  <div class="grid ddmap">
+    <div class="card" style="padding:16px">
+      <h4>Discover &#10003;</h4>
+      <p><span class="lang-de">19 Themen: 14 Secondary + 5 Primary Research, Convenience-Paradox, Werte-Weltvergleich</span><span class="lang-en">19 themes: 14 secondary + 5 primary research, convenience paradox, global values comparison</span></p>
+    </div>
+    <div class="card" style="padding:16px">
+      <h4>Define &#10003;</h4>
+      <p><span class="lang-de">Ebenen-Matrix, 3 Insights, HMW-Frage</span><span class="lang-en">Levels matrix, 3 insights, HMW question</span></p>
+    </div>
+    <div class="card" style="padding:16px">
+      <h4>Develop &#10227;</h4>
+      <p><span class="lang-de">13 Format-Ideen — in Arbeit, noch nicht Teil dieser Seite</span><span class="lang-en">13 format ideas — in progress, not yet part of this page</span></p>
+    </div>
+    <div class="card" style="padding:16px">
+      <h4>Deliver &#9675;</h4>
+      <p><span class="lang-de">Folgt: bauen, testen, iterieren</span><span class="lang-en">Coming: build, test, iterate</span></p>
+    </div>
+  </div>
+  <style>
+    .ddmap{grid-template-columns:repeat(4,1fr)}
+    @media(max-width:640px){.ddmap{grid-template-columns:1fr 1fr}}
+  </style>
+
   <h2>Discover</h2>
   <h3><span class="lang-de">19 Themen, zwei Quellen</span><span class="lang-en">19 themes, two sources</span></h3>
   <p>
@@ -164,6 +207,44 @@
     .pbreak{background:var(--coral-light);border:1px solid #D85A30;border-radius:8px;padding:16px;text-align:center;font-size:15px;color:var(--coral)}
     .pbreak strong{font-weight:500}
     .panswer{margin-top:12px;background:var(--yellow);border-radius:8px;padding:16px;text-align:center;font-size:15px;color:#1a1a1a}
+  </style>
+
+  <h3><span class="lang-de">Werte im Weltvergleich</span><span class="lang-en">Values across the world</span></h3>
+  <p>
+    <span class="lang-de">Reiner Research-Stand, noch kein Lösungsraum. Grundlage: World Values Survey / Inglehart-Welzel-Karte (90+ Länder). Zwei Achsen erklären 70–75% der weltweiten Wertevarianz: <strong>traditionell ↔ säkular-rational</strong> und <strong>Survival ↔ Self-Expression</strong>. Die Farbe zeigt die zweite Achse; darunter stehen die typischen Top-Werte je Kulturraum.</span>
+    <span class="lang-en">Pure research — no solution space yet. Basis: World Values Survey / Inglehart-Welzel map (90+ countries). Two axes explain 70–75% of global value variance: <strong>traditional ↔ secular-rational</strong> and <strong>survival ↔ self-expression</strong>. Colour shows the second axis; below are the typical top values per cultural region.</span>
+  </p>
+  <div class="wlegend sans">
+    <span><span class="dot" style="background:var(--yellow)"></span><span class="lang-de">Self-Expression-Pol</span><span class="lang-en">Self-expression pole</span></span>
+    <span><span class="dot" style="background:#D85A30"></span><span class="lang-de">Survival-Pol</span><span class="lang-en">Survival pole</span></span>
+    <span><span class="dot" style="background:#cfc9bd"></span><span class="lang-de">gemischt</span><span class="lang-en">mixed</span></span>
+  </div>
+  <div class="wmap sans">
+    <div class="wtile we"><strong><span class="lang-de">Englischsprachiger Westen</span><span class="lang-en">English-speaking West</span></strong><em><span class="lang-de">eher traditionell · Self-Expression</span><span class="lang-en">rather traditional · self-expression</span></em><span class="wv"><span class="lang-de">Freiheit, Leistung, Individualismus</span><span class="lang-en">Freedom, achievement, individualism</span></span></div>
+    <div class="wtile we"><strong><span class="lang-de">Protestantisches Europa</span><span class="lang-en">Protestant Europe</span></strong><em><span class="lang-de">säkular-rational · Self-Expression</span><span class="lang-en">secular-rational · self-expression</span></em><span class="wv"><span class="lang-de">Autonomie, Toleranz, Umwelt, Lebensqualität</span><span class="lang-en">Autonomy, tolerance, environment, quality of life</span></span></div>
+    <div class="wtile ws"><strong><span class="lang-de">Konfuzianisches Asien</span><span class="lang-en">Confucian Asia</span></strong><em><span class="lang-de">stark säkular-rational · Survival</span><span class="lang-en">strongly secular-rational · survival</span></em><span class="wv"><span class="lang-de">Bildung, Fleiß, Gruppe, Sicherheit</span><span class="lang-en">Education, diligence, group, security</span></span></div>
+    <div class="wtile wm"><strong><span class="lang-de">Katholisches Europa</span><span class="lang-en">Catholic Europe</span></strong><em><span class="lang-de">säkular · gemischt</span><span class="lang-en">secular · mixed</span></em><span class="wv"><span class="lang-de">Familie, Sicherheit, Lebensqualität</span><span class="lang-en">Family, security, quality of life</span></span></div>
+    <div class="wtile ws"><strong><span class="lang-de">Orthodoxes Europa</span><span class="lang-en">Orthodox Europe</span></strong><em><span class="lang-de">säkular · Survival</span><span class="lang-en">secular · survival</span></em><span class="wv"><span class="lang-de">Sicherheit, Stabilität, Familie</span><span class="lang-en">Security, stability, family</span></span></div>
+    <div class="wtile ws"><strong><span class="lang-de">Südasien (inkl. Indonesien/Bali)</span><span class="lang-en">South Asia (incl. Indonesia/Bali)</span></strong><em><span class="lang-de">traditionell · Survival</span><span class="lang-en">traditional · survival</span></em><span class="wv"><span class="lang-de">Religion, Familie, Gemeinschaft, Respekt</span><span class="lang-en">Religion, family, community, respect</span></span></div>
+    <div class="wtile we"><strong><span class="lang-de">Lateinamerika</span><span class="lang-en">Latin America</span></strong><em><span class="lang-de">traditionell · Self-Expression</span><span class="lang-en">traditional · self-expression</span></em><span class="wv"><span class="lang-de">Familie, Religion, Lebensfreude</span><span class="lang-en">Family, religion, joy of life</span></span></div>
+    <div class="wtile ws"><strong><span class="lang-de">Afrikanisch-islamische Welt</span><span class="lang-en">African-Islamic world</span></strong><em><span class="lang-de">stark traditionell · Survival</span><span class="lang-en">strongly traditional · survival</span></em><span class="wv"><span class="lang-de">Religion, Familie, Gemeinschaft</span><span class="lang-en">Religion, family, community</span></span></div>
+  </div>
+  <p style="font-size:14px;color:var(--muted)">
+    <span class="lang-de"><strong>Universell gleich:</strong> Familie und Gesundheit stehen fast überall auf Platz 1–2. <strong>Komplett unterschiedlich:</strong> Individuum vs. Gruppe als Bezugspunkt, die Rolle der Religion, und ob gewonnene Freiheit in Selbstentfaltung oder Sicherheit investiert wird. Quellen: World Values Survey, Inglehart-Welzel, Ipsos.</span>
+    <span class="lang-en"><strong>Universally shared:</strong> family and health rank 1–2 almost everywhere. <strong>Fundamentally different:</strong> individual vs. group as reference point, the role of religion, and whether gained freedom is invested in self-development or security. Sources: World Values Survey, Inglehart-Welzel, Ipsos.</span>
+  </p>
+  <style>
+    .wlegend{display:flex;gap:20px;margin:8px 0 16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+    .wlegend > span{display:flex;align-items:center;gap:6px}
+    .wmap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 16px}
+    @media(max-width:640px){.wmap{grid-template-columns:1fr}}
+    .wtile{border-radius:8px;padding:16px;font-size:14px;border:1px solid var(--border)}
+    .wtile strong{display:block;font-weight:500}
+    .wtile em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin:2px 0 8px}
+    .wtile .wv{display:block;font-size:13px}
+    .wtile.we{background:var(--teal-light);border-color:var(--yellow)}
+    .wtile.ws{background:var(--coral-light);border-color:#D85A30}
+    .wtile.wm{background:var(--card)}
   </style>
 
   <h2>Define</h2>
